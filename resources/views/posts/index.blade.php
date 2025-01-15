@@ -90,9 +90,12 @@
         <script type="module">
             window.Echo.channel('posts')
                 .listen('.create', (e) => {
-                    console.log(e);
-                    document.getElementById('notification').innerHTML = `
-                    <div class="alert alert-success" role="alert">${e.message}</div>`;
+                    // console.log(e);
+                    // document.getElementById('notification').insertAdjacentHTML = `
+            // <div class="alert alert-success" role="alert">${e.message}</div>`;
+                    // insertAdjacentHTML Using
+                    document.getElementById('notification').insertAdjacentHTML('beforeend',
+                        `<div class="alert alert-success" role="alert">${e.message}</div>`);
                 });
         </script>
     @endif
